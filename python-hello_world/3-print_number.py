@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-import sys; number = int(sys.argv[1])
+number = 98
 # my code
 print(f"{number} Battery street")
