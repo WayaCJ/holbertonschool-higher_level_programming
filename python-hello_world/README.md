@@ -1,6 +1,6 @@
 # Python - Hello, World
 
-## Table of Content #tableofcontent#
+## Table of Content
 - [Description](#description)
 - [What is expected?](#what-is-expected)
 - [Exercises](#exercises)
@@ -11,7 +11,7 @@
 And at the end we got a surprise aswell. 
 
 ### What is expected?
-- At the end of this project, w are expected to be able to explain the following:
+- At the end of this project, we are expected to be able to explain the following:
 
 - How to use the Python interpreter
 - How to print text and variables using print
