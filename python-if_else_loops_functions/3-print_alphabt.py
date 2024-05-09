@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 for letters in range(ord('a'), ord('z')+1):
     if chr(letters) not in ['q', 'e']:
-        print(chr(letters), end="")
+        print("{}".format(chr(letters)), end="")
