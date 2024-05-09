@@ -5,6 +5,8 @@ str = "Last digit of"
 str2 = "is"
 last = number % 10
 
+if number < 0:
+    last = number % -10
 if last > 5:
     print(f"{str} {number} {str2} {last} and is greater than 5")
 elif last == 0:
