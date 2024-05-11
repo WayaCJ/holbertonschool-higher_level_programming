@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-from easy_print import easy_p
-easy_p()
+import os; os.write(1, b'#pythoniscool\n')
