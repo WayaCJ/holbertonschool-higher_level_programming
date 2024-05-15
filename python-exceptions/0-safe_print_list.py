@@ -4,7 +4,7 @@ if __name__ == "__main__":
         c = 0
         try:
             for i in range(x):
-                count += 1
+                c += 1
                 print("{:d}".format(c), end="")
         except IndexError:
             pass
