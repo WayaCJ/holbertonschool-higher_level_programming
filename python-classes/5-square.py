@@ -4,7 +4,8 @@
 
 
 class Square:
-    """class Square
+    """
+    MyClass Square
     """
 
     def __init__(self, size=0):
