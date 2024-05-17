@@ -54,7 +54,7 @@ class Square:
             print()
             return
         for _ in range(self.__position[1]):
-            print(" ")
+            print()
             if self.__position[1] > 0:
                 pass
         for _ in range(self.__size):
