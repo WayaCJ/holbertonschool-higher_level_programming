@@ -14,4 +14,7 @@ class Square:
         size: no type/value verification
         """
         self.__size = size
-        
+    def size(self):
+        return self.__size
+    def set_size(self, value):
+        self.__size = value
