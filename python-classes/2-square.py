@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """This module defines a class called Square
-    
 """
+
 
 class Square:
     """class Square
     """
+
     def __init__(self, size=0):
         """
         Args:
