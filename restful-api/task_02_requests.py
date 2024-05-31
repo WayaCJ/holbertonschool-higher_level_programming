@@ -15,7 +15,7 @@ def fetch_and_print_posts():
 
     r = requests.get(url)
 
-    print("Status Code: ", r.status_code)
+    print("Status Code:", r.status_code)
 
     if r.status_code == 200:
 
