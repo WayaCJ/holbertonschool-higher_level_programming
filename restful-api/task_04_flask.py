@@ -5,61 +5,55 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 users = {
-    "jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}
+    "jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"},
+    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
 }
 
 @app.route('/')
 def home():
     """
-    First endpoint. Returns a welcome message.
+    welcome message.
     """
 
     return "Welcome to the Flask API!"
 
-@app.route('/data')
+@app.route('/data', methods=['GET'])
 def get_data():
     """
-    Endpoint to get usernames. Returns jsonify
+    A JSON response containing a list of all usernames.
     """
 
     return jsonify(list(users.keys()))
 
-@app.route('/status')
-def get_status():
+@app.route('/status', methods=['GET'])
+def status():
     """
-    Endpoint that checks API status.
+    A message indicating the API status.
     """
 
     return "OK"
 
-@app.route('/users/<username>')
+@app.route('/users/<username>', methods=['GET'])
 def get_user(username):
     """
-    Endpoint to get user details by username.
+  The username to retrieve.
     """
 
-    if username in users:
-        return jsonify(users[username])
-    else:
-        return jsonify({"error": "User not found"}), 404
+    user = users.get(username)
+    if user:
+        return jsonify(user)
+    return "User not found", 404
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
     """
-    Endpoint to add a new user. Accepts JSON data with user details and adds it to the users dictionary.
+    Accepts JSON data with user details and adds it to the users dictionary.
     """
 
-    data = request.json
-    if data:
-        username = data.get('username')
-        if username:
-            users[username] = {
-                "name": data.get("name"),
-                "age": data.get("age"),
-                "city": data.get("city")
-            }
-            return jsonify({"message": "User added successfully", "user": users[username]}), 201
-    return jsonify({"error": "Invalid data provided"}), 400
+    user_data = request.json
+    username = user_data['username']
+    users[username] = user_data
+    return jsonify({"message": "User added", "user": user_data})
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
